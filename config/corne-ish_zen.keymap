@@ -29,20 +29,20 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |   | ENT |RSE/Bk| DEL |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T           &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G           &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B           &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                    &kp LGUI &mo 1 &lt 1 SPACE       &lt 1 RET &lt 2 BSPC &kp DEL
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T                  &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
+   &kp LCTRL &kp A &kp S &kp D &kp F &kp G                  &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                  &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+            &kp LGUI &mo LOWER &lt LOWER SPACE         &lt LOWER RET &lt RAISE BSPC &kp DEL
                         >;
                 };
 
                 LOWER {
                         label = "NUMBER";
 // -----------------------------------------------------------------------------------------
-// | Grave|  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *   |  (  |  )  |A(DEL)|
-// | Grave|  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8   |  9  |  0  | BKSP |
-// |      |     |     |     |     |     |   |     |     |      |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     |A(bksp|
+// | Grave|  !  |  @  |  #  |  $  |  %  |   |  ^  |  &   |  *   |  (  |  )  |A(DEL)|
+// | Grave|  1  |  2  |  3  |  4  |  5  |   |  6  |  7   |  8   |  9  |  0  | BKSP |
+// |      |     |     |     |     |     |   |     |      |      |     |     |      |
+//                    | GUI |     | SPC |   | ENT |A(bksp|A(del)|
                         bindings = <
    &kp GRAVE  &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT          &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR  &kp LA(DEL)
    &kp GRAVE  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6    &kp N7   &kp N8    &kp N9   &kp N0    &kp BSPC

@@ -7,6 +7,17 @@
 // #define RAISE 2
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+    };
+};
+
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
@@ -41,7 +52,7 @@
                 };
 
                 raise {
-                        label = "NAV";
+                        label = " NAV";
 // -----------------------------------------------------------------------------------------
 // |  TAB |     |     |     |     |     |   |     |     |  UP |     |      | BKSP |
 // | CTRL |     |     |     |     |     |   |A(LFT| LEFT| DOWN|RIGHT|A(RGHT|  `   |

@@ -2,9 +2,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-// #define QWERTY 0
-// #define LOWER 1
-// #define RAISE 2
+#define QWERTY 0
+#define LOWER 1
+#define RAISE 2
 
 / {
     combos {
@@ -21,22 +21,22 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                qwerty {
+                QWERTY {
                         label = "QWERTY";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | DEL  |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | BKSP|
+//                    | GUI | LWR | SPC |   | ENT |RSE/Bk| DEL |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T           &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G           &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B           &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                    &kp LGUI &mo 1 &lt 1 SPACE       &lt 1 RET &mo 2 &kp BSPC
+                    &kp LGUI &mo 1 &lt 1 SPACE       &lt 1 RET &lt 2 BSPC &kp del
                         >;
                 };
 
-                lower {
+                LOWER {
                         label = "NUMBER";
 // -----------------------------------------------------------------------------------------
 // | Grave|  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *   |  (  |  )  |A(DEL)|
@@ -47,11 +47,11 @@
    &kp GRAVE  &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT          &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR  &kp LA(DEL)
    &kp GRAVE  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6    &kp N7   &kp N8    &kp N9   &kp N0    &kp BSPC
    &trans     &trans       &trans       &trans       &trans       &trans             &trans    &trans   &trans    &trans   &trans    &trans
-                          	        &kp LGUI     &trans       &kp SPACE          &kp RET   &trans   &kp LA(BSPC)
+                          	        &kp LGUI     &trans       &kp SPACE          &kp RET   &kp LA(BSPC)   &kp LA(DEL)
                         >;
                 };
 
-                raise {
+                RAISE {
                         label = " NAV";
 // -----------------------------------------------------------------------------------------
 // |  TAB |     |     |     |     |     |   |     |     |  UP |     |      | BKSP |

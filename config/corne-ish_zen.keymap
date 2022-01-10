@@ -3,8 +3,9 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define QWERTY 0
-#define LOWER 1
-#define RAISE 2
+#define COLEMAK 1
+#define LOWER 2
+#define RAISE 3
 
 / {
     combos {
@@ -29,10 +30,25 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |   | ENT |RSE/Bk| DEL |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T                  &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G                  &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                  &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-            &kp LGUI &mo LOWER &lt LOWER SPACE         &lt LOWER RET &lt RAISE BSPC &kp DEL
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T        /**/          &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
+   &kp LCTRL &kp A &kp S &kp D &kp F &kp G        /**/          &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B        /**/          &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+            &kp LGUI &mo LOWER &lt LOWER SPACE    /**/     &lt LOWER RETURN &lt RAISE BSPC &kp DEL
+                        >;
+                };
+
+                COLEMAK {
+                        label = "COLEMAK";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | DEL  |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
+//                    | GUI | LWR | SPC |   | ENT |RSE/Bk| DEL |
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T        /**/          &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
+   &kp LCTRL &kp A &kp S &kp F &kp F &kp F        /**/          &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B        /**/          &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+            &kp LGUI &mo LOWER &lt LOWER SPACE    /**/     &lt LOWER RETURN &lt RAISE BSPC &kp DEL
                         >;
                 };
 
@@ -44,25 +60,25 @@
 // |      |     |     |     |     |     |   |     |      |      |     |     |      |
 //                    | GUI |     | SPC |   | ENT |A(bksp|A(del)|
                         bindings = <
-   &kp GRAVE  &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT          &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR  &kp LA(DEL)
-   &kp GRAVE  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6    &kp N7   &kp N8    &kp N9   &kp N0    &kp BSPC
-   &trans     &trans       &trans       &trans       &trans       &trans             &trans    &trans   &trans    &trans   &trans    &trans
-                          	        &kp LGUI     &trans       &kp SPACE          &kp RET   &kp LA(BSPC)   &kp LA(DEL)
+   &kp GRAVE  &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT    /**/      &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR  &kp LA(DEL)
+   &kp GRAVE  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5       /**/      &kp N6    &kp N7   &kp N8    &kp N9   &kp N0    &kp BSPC
+   &trans     &trans       &trans       &trans       &trans       &trans       /**/      &trans    &trans   &trans    &trans   &trans    &trans
+                          	          &kp LGUI     &trans       &kp SPACE  /**/    &kp RET   &kp LA(BSPC)   &kp LA(DEL)
                         >;
                 };
 
                 RAISE {
                         label = "    NAV";
 // -----------------------------------------------------------------------------------------
-// |  TAB |     |     |     |     |     |   |     |     |  UP |     |      | BKSP |
+// |  TAB |clmak|     |     |     |     |   |     |     |  UP |     |      | BKSP |
 // | CTRL |     |     |     |     |     |   |A(LFT| LEFT| DOWN|RIGHT|A(RGHT|  `   |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |  -  |  +  |  =  |  _  | "|"  |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | DEL |
                         bindings = <
-   &kp TAB    &trans       &trans       &trans       &trans        &trans               &trans       &trans    &kp UP       &trans     &trans        &kp BSPC
-   &kp LCTRL  &trans       &trans       &trans       &trans        &trans               &kp LA(LEFT) &kp LEFT  &kp DOWN     &kp RIGHT  &kp LA(RIGHT) &kp GRAVE
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4         &kp MINUS    &kp PLUS  &kp EQUAL    &kp UNDER  &kp PIPE      &kp TILDE
-                    	                           &kp LGUI &trans &kp SPACE            &kp RET      &trans    &kp LA(DEL)
+   &kp TAB    &tog COLEMAK &trans       &trans       &trans        &trans         /**/      &trans       &trans    &kp UP       &trans     &trans        &kp BSPC
+   &kp LCTRL  &trans       &trans       &trans       &trans        &trans         /**/      &kp LA(LEFT) &kp LEFT  &kp DOWN     &kp RIGHT  &kp LA(RIGHT) &kp GRAVE
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4   /**/      &kp MINUS    &kp PLUS  &kp EQUAL    &kp UNDER  &kp PIPE      &kp TILDE
+                    	                           &kp LGUI &trans &kp SPACE      /**/      &kp RET      &trans    &kp LA(DEL)
                         >;
                 };
         };

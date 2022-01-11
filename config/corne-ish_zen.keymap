@@ -15,11 +15,14 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
+
+ /*       
         combo_esc_alt {
             timeout-ms = <50>;
             key-positions = <1 2>;
             bindings = <&kp ESC>;
         };
+*/
     };
 
 /*
@@ -42,9 +45,10 @@
             flavor = "hold-preferred";           
             tapping-term-ms = <300>;    // <---[[moderate duration]]
             quick-tap-ms = <100>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&lt>, <&kp>;
         };
     };
+
 
     keymap {
             compatible = "zmk,keymap";
@@ -52,12 +56,12 @@
                 QWERTY {
                         label = "QWERTY";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | DEL  |
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | play |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |   | ENT |RSE/Bk| DEL |
                         bindings = <
-   &mt TAB GRAVE &kp Q &kp W &kp E &kp R &kp T        /**/          &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
+   &mt GRAVE TAB &kp Q &kp W &kp E &kp R &kp T        /**/          &kp Y     &kp U  &kp I     &kp O   &kp P    &kp K_PP
    &kp LCTRL     &kp A &kp S &kp D &kp F &kp G        /**/          &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT     &kp Z &kp X &kp C &kp V &kp B        /**/          &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                 &kp LGUI &mo LOWER &chp LOWER SPACE   /**/     &chp LOWER RETURN &chp RAISE BSPC &kp DEL

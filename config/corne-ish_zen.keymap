@@ -8,6 +8,17 @@
 #define RAISE 3
 
 / {
+    behaviors {
+        gresc: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TAB_ESCAPE";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp GRAVE>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+    };
+
+/ {
     combos {
         compatible = "zmk,combos";
         combo_esc {

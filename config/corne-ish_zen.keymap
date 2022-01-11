@@ -15,6 +15,11 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
+        combo_esc2 {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+        };
     };
 };
 
@@ -30,10 +35,10 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |   | ENT |RSE/Bk| DEL |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T        /**/          &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G        /**/          &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B        /**/          &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-            &kp LGUI &mo LOWER &lt LOWER SPACE    /**/     &lt LOWER RETURN &lt RAISE BSPC &kp DEL
+   &mt ESC TAB &kp Q &kp W &kp E &kp R &kp T        /**/          &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
+   &kp LCTRL   &kp A &kp S &kp D &kp F &kp G        /**/          &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT   &kp Z &kp X &kp C &kp V &kp B        /**/          &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+              &kp LGUI &mo LOWER &lt LOWER SPACE    /**/     &lt LOWER RETURN &lt RAISE BSPC &kp DEL
                         >;
                 };
 

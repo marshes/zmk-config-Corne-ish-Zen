@@ -21,6 +21,8 @@
             bindings = <&kp ESC>;
         };
     };
+
+/*
     behaviors {
         tabgrave: tab_grave {
             compatible = "zmk,behavior-mod-morph";
@@ -28,6 +30,19 @@
             #binding-cells = <0>;
             bindings = <&kp TAB>, <&kp GRAVE>;
             mods = <(MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+    };
+*/
+
+    behaviors {
+        chp: custom_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CUSTOM_HOLD";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
         };
     };
 
@@ -42,10 +57,10 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |   | ENT |RSE/Bk| DEL |
                         bindings = <
-   &tabgrave   &kp Q &kp W &kp E &kp R &kp T        /**/          &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
-   &kp LCTRL   &kp A &kp S &kp D &kp F &kp G        /**/          &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT   &kp Z &kp X &kp C &kp V &kp B        /**/          &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-              &kp LGUI &mo LOWER &lt LOWER SPACE    /**/     &lt LOWER RETURN &lt RAISE BSPC &kp DEL
+   &mt TAB GRAVE &kp Q &kp W &kp E &kp R &kp T        /**/          &kp Y     &kp U  &kp I     &kp O   &kp P    &kp DEL
+   &kp LCTRL     &kp A &kp S &kp D &kp F &kp G        /**/          &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT     &kp Z &kp X &kp C &kp V &kp B        /**/          &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                &kp LGUI &mo LOWER &chp LOWER SPACE   /**/     &chp LOWER RETURN &chp RAISE BSPC &kp DEL
                         >;
                 };
 
@@ -72,7 +87,7 @@
 // |      |     |     |     |     |     |   |     |      |      |     |     |      |
 //                    | GUI |     | SPC |   | ENT |A(bksp|A(del)|
                         bindings = <
-   &kp LA(GRAVE)  &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT    /**/      &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR  &kp LA(DEL)
+   &kp LG(GRAVE)  &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT    /**/      &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR  &kp LA(DEL)
    &kp GRAVE      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5       /**/      &kp N6    &kp N7   &kp N8    &kp N9   &kp N0    &kp BSPC
    &trans         &trans       &trans       &trans       &trans       &trans       /**/      &trans    &trans   &trans    &trans   &trans    &trans
                           	              &kp LGUI     &trans       &kp SPACE  /**/    &kp RET   &kp LA(BSPC)   &kp LA(DEL)

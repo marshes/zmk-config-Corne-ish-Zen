@@ -7,6 +7,17 @@
 #define LOWER 2
 #define RAISE 3
 
+
+&mt {
+//  tapping-term-ms = <200>;
+  flavor = "hold-preferred";
+};
+
+
+
+/ {
+
+
  /*       
     combos {
         compatible = "zmk,combos";
@@ -48,12 +59,6 @@
 */
 
 
-&lt {
-//  tapping-term-ms = <200>;
-  flavor = "hold-preferred";
-};
-
-/ {
     keymap {
             compatible = "zmk,keymap";
 

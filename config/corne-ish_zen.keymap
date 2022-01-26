@@ -8,7 +8,7 @@
 #define RAISE 3
 
 
-&mt {
+&lt {
 //  tapping-term-ms = <200>;
   flavor = "hold-preferred";
 };

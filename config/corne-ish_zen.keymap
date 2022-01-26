@@ -10,7 +10,7 @@
 
 &lt {
 //  tapping-term-ms = <200>;
-  flavor = "htap-unless-interrupted";
+  flavor = "tap-unless-interrupted";
 };
 
 

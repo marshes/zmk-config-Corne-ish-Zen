@@ -7,8 +7,6 @@
 #define LOWER 2
 #define RAISE 3
 
-/ {
-
  /*       
     combos {
         compatible = "zmk,combos";
@@ -55,7 +53,7 @@
   flavor = "hold-preferred";
 };
 
-
+/ {
     keymap {
             compatible = "zmk,keymap";
 

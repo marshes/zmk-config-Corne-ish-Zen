@@ -23,18 +23,16 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
-
+//        combo_esc_alt {
+//            timeout-ms = <50>;
+//            key-positions = <1 2>;
+//            bindings = <&kp ESC>;
+//        };
+    };
 
 
 
 /* 
-        combo_esc_alt {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp ESC>;
-        };
-    };
-
     behaviors {
         tabgrave: tab_grave {
             compatible = "zmk,behavior-mod-morph";
